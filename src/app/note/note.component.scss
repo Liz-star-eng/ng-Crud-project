@@ -1,0 +1,166 @@
+.body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(62deg, rgba(1, 95, 183, 0.9732216701223994) 13%, rgba(255, 122, 151, 0.5) 4%), linear-gradient(44deg, rgba(0, 43, 99, 0.07922090238615942) 39%, rgba(242, 140, 143, 0.5) 18%), linear-gradient(118deg, rgba(84, 202, 242, 0.03152997265339608) 40%, rgba(247, 155, 187, 0.5) 54%), linear-gradient(58deg, rgba(90, 90, 237, 0.16144443572260592) 83%, rgba(249, 156, 142, 0.5) 23%);
+    background-blend-mode: normal, lighten, multiply, hard-light;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+}
+:root {
+    --color-background: #eee;
+    --color-text: #555;
+    --color-border: #e1e1e1;
+    --color-primary: #2B8492;
+    --font-main: 'Barlow', sans-serif;
+    --font-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    height: 100vh;
+    transition: .3s all;
+    overflow: hidden;
+}
+
+
+header {
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%;
+    color: rgb(90, 4, 90);
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}
+
+// body
+main {
+    display: flex;
+    justify-content: space-between;
+}
+aside {
+    border-right: 1px solid var(--color-border);
+    transition: .3s all;
+}
+.noteList {
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+        justify-content: space-around;
+}
+section {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    width: 25%;
+    .text-container {
+            background-color: white;
+            border-radius: 2px;
+            width: 100%;
+        }
+    
+         input {
+            border: none;
+            padding: 5px 10px;
+            background-color: none;
+        }
+    
+        input:focus,
+        textarea {
+            border: none;
+            outline: none;
+        }
+    
+         input::placeholder {
+            font-style: italic;
+            color: palevioletred;
+            font-weight: bold;
+        }
+    
+         textarea {
+            padding: 5px 10px;
+            border: none;
+            background-color: none;
+        }
+}
+
+button {
+    padding: 0 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+    color: var(--color-text);
+}
+
+button:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/**  Search  **/
+.search-box {
+    border-bottom: 1px solid var(--color-border);
+    align-items: center;
+    padding: 0 20px;
+    input {
+            padding: 8px 5px;
+            margin: 5px 0 5px 5px;
+            border: none;
+            border-radius: 5px;
+        }
+    
+        input:focus {
+            outline: none;
+            color: #111;
+        }
+}
+
+.searchValue {
+    text-align: center;
+    max-width: 43%;
+    margin: auto;
+    padding: 10px;
+    color: var (--color-primary);
+}
+
+.boxColor {
+    background-color: rgba(255, 192, 203, 0.4);
+    border-radius: 10px;
+}
+
+.selected {
+    background-color: white;
+    margin-right: -1px;
+}
+
+
+// #noteinput {
+//     width: 100%;
+//     height: calc(100vh - 60px);
+//     padding: 20px;
+//     border: none;
+//     background-color: transparent;
+//     font-size: 1.2em;
+//     transition: .3s all;
+// }
+
+// #noteinput:focus {
+//     outline: none;
+//     background-color: white;
+//     color: #111;
+// }

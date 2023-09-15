@@ -1,0 +1,52 @@
+
+<div class="body">
+  <form class="container active" (ngSubmit)="addNote()">
+    <header>
+      <button id="add" title="Add new note" type="">
+        <i class="fa fa-plus"></i>
+      </button>
+      <div class="search-box">
+        <i class="fa fa-search"> </i>
+        <input type="text"  placeholder="Search" name="search" [(ngModel)]="searchValue" title="search note"/>
+      </div>
+      <h3>Notes</h3>
+      <div class="buttons">
+        <button id="save" title="Save note" type="submit">
+          <i class="fa fa-save"></i>
+        </button>
+      </div>
+    </header>
+    <p class="searchValue" *ngIf="searchValue != '' " [ngClass]="{boxColor: searchValue != '' }"> Search results for: "{{ searchValue }}" </p>
+    <main>
+      <section>
+        <div class="text-container" title="click to write note">
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            [(ngModel)]="title"
+          />
+          <textarea
+            name="body"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="write note here"
+            [(ngModel)]="body"
+          ></textarea>
+        </div>
+      </section>
+      <aside>
+        <ul *ngIf="addedNote"  class="noteList">
+                   <app-note-content
+              *ngFor="let note of noteList; let i = index"
+              [note]="note"
+              [index]="i"
+              (delete)="deleteNote($event)"
+            >
+            </app-note-content>
+        </ul>
+      </aside>
+    </main>
+  </form>
+</div>

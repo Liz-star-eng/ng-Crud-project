@@ -1,0 +1,150 @@
+<div class="body">
+  <div class="container">
+    <div class="logo">
+      <img
+        src="https://i.imgur.com/Qv67Tyq.png"
+        alt="Restaurant Logo"
+        class="logo-img"
+      />
+    </div>
+    <div>
+      <h2 class="animate__animated animate__fadeIn">Menu</h2>
+      <div class="menu-item animate__animated animate__fadeIn">
+        <span
+          ><i
+            class="fas fa-hamburger menu-item-icon"
+            style="color: #f44336"
+          ></i>
+          Burger</span
+        >
+        <input type="number" id="burger-quantity" value="0" />
+        <i
+          class="fas fa-plus-circle"
+          onclick="incrementQuantity('burger-quantity')"
+        ></i>
+        <i
+          class="fas fa-minus-circle"
+          onclick="decrementQuantity('burger-quantity')"
+        ></i>
+        <button class="btn btn-primary btn-custom" onclick="calculateTotal()">
+          Add to Order
+        </button>
+      </div>
+      <div class="menu-item animate__animated animate__fadeIn">
+        <span
+          ><i
+            class="fas fa-pizza-slice menu-item-icon"
+            style="color: #4caf50"
+          ></i>
+          Pizza</span
+        >
+        <input type="number" id="pizza-quantity" value="0" />
+        <i
+          class="fas fa-plus-circle"
+          onclick="incrementQuantity('pizza-quantity')"
+        ></i>
+        <i
+          class="fas fa-minus-circle"
+          onclick="decrementQuantity('pizza-quantity')"
+        ></i>
+        <button class="btn btn-primary btn-custom" onclick="calculateTotal()">
+          Add to Order
+        </button>
+      </div>
+      <div class="menu-item animate__animated animate__fadeIn">
+        <span
+          ><i class="fas fa-utensils menu-item-icon" style="color: #2196f3"></i>
+          Salad</span
+        >
+        <input type="number" id="salad-quantity" value="0" />
+        <i
+          class="fas fa-plus-circle"
+          onclick="incrementQuantity('salad-quantity')"
+        ></i>
+        <i
+          class="fas fa-minus-circle"
+          onclick="decrementQuantity('salad-quantity')"
+        ></i>
+        <button class="btn btn-primary btn-custom" onclick="calculateTotal()">
+          Add to Order
+        </button>
+      </div>
+      <div class="menu-item animate__animated animate__fadeIn">
+        <span
+          ><i class="fas fa-coffee menu-item-icon" style="color: #ff9800"></i>
+          Coffee</span
+        >
+        <input type="number" id="coffee-quantity" value="0" />
+        <i
+          class="fas fa-plus-circle"
+          onclick="incrementQuantity('coffee-quantity')"
+        ></i>
+        <i
+          class="fas fa-minus-circle"
+          onclick="decrementQuantity('coffee-quantity')"
+        ></i>
+        <button class="btn btn-primary btn-custom" onclick="calculateTotal()">
+          Add to Order
+        </button>
+      </div>
+    </div>
+    <div>
+      <h2 class="animate__animated animate__fadeIn">Order</h2>
+      <div
+        id="order-items"
+        class="order-items animate__animated animate__fadeIn"
+      >
+        <!-- Order items will be dynamically added here -->
+      </div>
+      <div class="total-price animate__animated animate__fadeIn">
+        Total: $<span id="total-price">0</span>
+      </div>
+      <div class="mt-4">
+        <input
+          type="text"
+          id="customer-name"
+          placeholder="Customer Name"
+          class="form-control"
+        />
+      </div>
+      <div class="mt-4">
+        <label for="payment-options">Payment Options:</label>
+        <select id="payment-options" class="form-control">
+          <option value="cash">Cash</option>
+          <option value="card">Card</option>
+          <option value="tap">Tap</option>
+        </select>
+      </div>
+      <div class="mt-4">
+        <label for="dine-options">Dine Options:</label>
+        <div id="dine-options" class="form-check">
+          <input
+            type="radio"
+            id="dine-in"
+            name="dine-option"
+            value="dine-in"
+            class="form-check-input"
+          />
+          <label for="dine-in" class="form-check-label">Dine In</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            id="dine-out"
+            name="dine-option"
+            value="dine-out"
+            class="form-check-input"
+          />
+          <label for="dine-out" class="form-check-label">Dine Out</label>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-custom mt-4" onclick="printBill()">
+        Print Bill
+      </button>
+    </div>
+  </div>
+
+  <div class="floating-bar">
+    Today's Total Sales: $<span id="today-sales-amount">0</span>
+  </div>
+</div>
